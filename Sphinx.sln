@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.Web.Host", "src\Sphinx.Web.Host\Sphinx.Web.Host.csproj", "{80D5CF99-02CA-4ECA-B72D-383749001A9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{07119206-E05A-48CA-A337-BDBF44BF8EAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.Domain", "src\Sphinx.Domain\Sphinx.Domain.csproj", "{F887DA59-3080-4243-8F00-C39D333FC947}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.EntityFramework", "src\Sphinx.EntityFramework\Sphinx.EntityFramework.csproj", "{0E62B66F-5912-4D83-97AE-AE4AA669239A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.Application", "src\Sphinx.Application\Sphinx.Application.csproj", "{852A6924-CCFD-4DAD-BDBD-7D989451CEB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F1013EF2-EA81-4540-9919-A807B8DE9C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sphinx.Application.Tests", "test\Sphinx.Application.Tests\Sphinx.Application.Tests.csproj", "{966399BA-B49E-4014-8E89-A06E3CA24E1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80D5CF99-02CA-4ECA-B72D-383749001A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D5CF99-02CA-4ECA-B72D-383749001A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D5CF99-02CA-4ECA-B72D-383749001A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D5CF99-02CA-4ECA-B72D-383749001A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F887DA59-3080-4243-8F00-C39D333FC947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F887DA59-3080-4243-8F00-C39D333FC947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F887DA59-3080-4243-8F00-C39D333FC947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F887DA59-3080-4243-8F00-C39D333FC947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E62B66F-5912-4D83-97AE-AE4AA669239A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E62B66F-5912-4D83-97AE-AE4AA669239A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E62B66F-5912-4D83-97AE-AE4AA669239A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E62B66F-5912-4D83-97AE-AE4AA669239A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852A6924-CCFD-4DAD-BDBD-7D989451CEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852A6924-CCFD-4DAD-BDBD-7D989451CEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852A6924-CCFD-4DAD-BDBD-7D989451CEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852A6924-CCFD-4DAD-BDBD-7D989451CEB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80D5CF99-02CA-4ECA-B72D-383749001A9C} = {07119206-E05A-48CA-A337-BDBF44BF8EAA}
+		{F887DA59-3080-4243-8F00-C39D333FC947} = {07119206-E05A-48CA-A337-BDBF44BF8EAA}
+		{0E62B66F-5912-4D83-97AE-AE4AA669239A} = {07119206-E05A-48CA-A337-BDBF44BF8EAA}
+		{852A6924-CCFD-4DAD-BDBD-7D989451CEB8} = {07119206-E05A-48CA-A337-BDBF44BF8EAA}
+		{966399BA-B49E-4014-8E89-A06E3CA24E1D} = {F1013EF2-EA81-4540-9919-A807B8DE9C9F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {113C9FDA-E492-4F63-8D36-8729962B3183}
+	EndGlobalSection
+EndGlobal

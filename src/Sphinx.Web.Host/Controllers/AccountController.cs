@@ -29,30 +29,6 @@ namespace Sphinx.Web.Host.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var applicationUser = new ApplicationUser
-            {
-                UserName = model.UserName,
-                Email = model.Email
-            };
-
-            var result = await _userManager.CreateAsync(applicationUser, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return new BadRequestObjectResult(ErrorHelper.AddErrorsToModelState(result, ModelState));
-            }
-
-            return new OkObjectResult("Account created");
-        }
-
-        [HttpPost("[action]")]
         public async Task<IActionResult> Login([FromBody]LoginViewModel loginViewModel)
         {
             if (!ModelState.IsValid)
@@ -77,6 +53,30 @@ namespace Sphinx.Web.Host.Controllers
             );
 
             return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var applicationUser = new ApplicationUser
+            {
+                UserName = model.UserName,
+                Email = model.Email
+            };
+
+            var result = await _userManager.CreateAsync(applicationUser, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return new BadRequestObjectResult(ErrorHelper.AddErrorsToModelState(result, ModelState));
+            }
+
+            return new OkObjectResult("Account created");
         }
 
         private async Task<ClaimsIdentity> GetClaimsIdentity(string userName, string password)

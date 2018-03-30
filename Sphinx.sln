@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.Application", "src\S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F1013EF2-EA81-4540-9919-A807B8DE9C9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sphinx.Application.Tests", "test\Sphinx.Application.Tests\Sphinx.Application.Tests.csproj", "{966399BA-B49E-4014-8E89-A06E3CA24E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.Application.Tests", "test\Sphinx.Application.Tests\Sphinx.Application.Tests.csproj", "{966399BA-B49E-4014-8E89-A06E3CA24E1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

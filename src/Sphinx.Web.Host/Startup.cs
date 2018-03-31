@@ -56,7 +56,7 @@ namespace Sphinx.Web.Host
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(jwtBearerOptions =>
             {
-                jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters()
+                jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateActor = true,
                     ValidateAudience = true,

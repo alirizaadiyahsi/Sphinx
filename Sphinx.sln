@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F1013EF2-E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sphinx.Application.Tests", "test\Sphinx.Application.Tests\Sphinx.Application.Tests.csproj", "{966399BA-B49E-4014-8E89-A06E3CA24E1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sphinx.Web.Host.Tests", "test\Sphinx.Web.Host.Tests\Sphinx.Web.Host.Tests.csproj", "{59A4F5ED-219C-4B37-ACAF-4A58EA059241}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{966399BA-B49E-4014-8E89-A06E3CA24E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A4F5ED-219C-4B37-ACAF-4A58EA059241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A4F5ED-219C-4B37-ACAF-4A58EA059241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A4F5ED-219C-4B37-ACAF-4A58EA059241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A4F5ED-219C-4B37-ACAF-4A58EA059241}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{0E62B66F-5912-4D83-97AE-AE4AA669239A} = {07119206-E05A-48CA-A337-BDBF44BF8EAA}
 		{852A6924-CCFD-4DAD-BDBD-7D989451CEB8} = {07119206-E05A-48CA-A337-BDBF44BF8EAA}
 		{966399BA-B49E-4014-8E89-A06E3CA24E1D} = {F1013EF2-EA81-4540-9919-A807B8DE9C9F}
+		{59A4F5ED-219C-4B37-ACAF-4A58EA059241} = {F1013EF2-EA81-4540-9919-A807B8DE9C9F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {113C9FDA-E492-4F63-8D36-8729962B3183}

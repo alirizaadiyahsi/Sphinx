@@ -15,9 +15,9 @@ namespace Sphinx.Web.Host.Helpers
             return modelState;
         }
 
-        public static ModelStateDictionary AddErrorToModelState(string code, string description, ModelStateDictionary modelState)
+        public static ModelStateDictionary AddErrorToModelState(string key, string description, ModelStateDictionary modelState)
         {
-            modelState.TryAddModelError(code, description);
+            modelState.TryAddModelError(key, description);
             return modelState;
         }
     }

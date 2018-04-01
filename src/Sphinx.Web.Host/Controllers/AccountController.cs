@@ -63,10 +63,17 @@ namespace Sphinx.Web.Host.Controllers
                 return BadRequest(ModelState);
             }
 
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                return new BadRequestObjectResult(ErrorHelper.AddErrorToModelState("EmailAlreadyExist", "This email already exists!", ModelState));
+            }
+
             var applicationUser = new ApplicationUser
             {
                 UserName = model.UserName,
-                Email = model.Email
+                Email = model.Email,
+                EmailConfirmed = true
             };
 
             var result = await _userManager.CreateAsync(applicationUser, model.Password);

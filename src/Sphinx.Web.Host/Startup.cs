@@ -20,22 +20,22 @@ namespace Sphinx.Web.Host
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        private readonly IConfiguration _configuration;
         private readonly SymmetricSecurityKey _signingKey;
 
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
             _signingKey =
                 new SymmetricSecurityKey(
-                    Encoding.ASCII.GetBytes(Configuration["Authentication:JwtBearer:SecurityKey"]));
+                    Encoding.ASCII.GetBytes(_configuration["Authentication:JwtBearer:SecurityKey"]));
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<SphinxDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<SphinxDbContext>()
@@ -46,8 +46,8 @@ namespace Sphinx.Web.Host
 
             services.Configure<JwtTokenConfiguration>(options =>
             {
-                options.Issuer = Configuration["Authentication:JwtBearer:Issuer"];
-                options.Audience = Configuration["Authentication:JwtBearer:Audience"];
+                options.Issuer = _configuration["Authentication:JwtBearer:Issuer"];
+                options.Audience = _configuration["Authentication:JwtBearer:Audience"];
                 options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
             });
             services.AddAuthentication(options =>
@@ -62,8 +62,8 @@ namespace Sphinx.Web.Host
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["Authentication:JwtBearer:Issuer"],
-                    ValidAudience = Configuration["Authentication:JwtBearer:Audience"],
+                    ValidIssuer = _configuration["Authentication:JwtBearer:Issuer"],
+                    ValidAudience = _configuration["Authentication:JwtBearer:Audience"],
                     IssuerSigningKey = _signingKey
                 };
             });
@@ -110,7 +110,7 @@ namespace Sphinx.Web.Host
             });
 
             app.UseCors(builder =>
-                builder.WithOrigins(Configuration["App:CorsOrigins"]
+                builder.WithOrigins(_configuration["App:CorsOrigins"]
                     .Split(",", StringSplitOptions.RemoveEmptyEntries)));
 
             app.UseAuthentication();

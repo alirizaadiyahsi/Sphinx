@@ -8,7 +8,11 @@ namespace Sphinx.Application
     {
         public static IServiceCollection AddSphinxApplication(this IServiceCollection services)
         {
-            services.AddAutoMapper(x => x.AddProfile(new ApplicationMappingProfile()));
+            services.AddSingleton(new MapperConfiguration(mapperConfig =>
+            {
+                mapperConfig.AddProfile(new ApplicationMappingProfile());
+            }).CreateMapper());
+
             services.AddTransient<IUserApplicationService, UserApplicationService>();
 
             return services;

@@ -16,6 +16,7 @@ namespace Sphinx.Web.Host.Tests
     {
         private readonly HttpClient _client;
         public JwtTokenAuthenticationTests()
+
         {
             var server = new TestServer(
                 new WebHostBuilder()
@@ -67,8 +68,7 @@ namespace Sphinx.Web.Host.Tests
             Assert.Equal(HttpStatusCode.OK, getValueResponse.StatusCode);
 
             var getValueResponseString = await getValueResponse.Content.ReadAsStringAsync();
-            var getValueResponseJson = JArray.Parse(getValueResponseString);
-            Assert.True(getValueResponseJson.Count == 1);
+            Assert.True(getValueResponseString == "value");
         }
     }
 }

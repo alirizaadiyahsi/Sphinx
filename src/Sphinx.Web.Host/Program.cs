@@ -27,6 +27,7 @@ namespace Sphinx.Web.Host
             {
                 Log.Information("Starting web host");
                 BuildWebHost(args).Run();
+
                 return 0;
             }
             catch (Exception ex)

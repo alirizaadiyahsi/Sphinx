@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Sphinx.Application.WeatherForecasts;
 using Sphinx.Web.Host.AppConsts;
 
 namespace Sphinx.Web.Host.Controllers
@@ -8,6 +10,19 @@ namespace Sphinx.Web.Host.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IWeatherForecastApplicationService _weatherForecastApplicationService;
+
+        public ValuesController(IWeatherForecastApplicationService weatherForecastApplicationService)
+        {
+            _weatherForecastApplicationService = weatherForecastApplicationService;
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<WeatherForecastDto>> WeatherForecasts()
+        {
+            return await _weatherForecastApplicationService.GetAllAsync();
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()

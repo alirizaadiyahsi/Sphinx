@@ -11,9 +11,10 @@ using System;
 namespace Sphinx.EntityFramework.Migrations
 {
     [DbContext(typeof(SphinxDbContext))]
-    partial class SphinxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180420114332_Added_WeatherForecast_Entity")]
+    partial class Added_WeatherForecast_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

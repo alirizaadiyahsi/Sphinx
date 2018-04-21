@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Sphinx.Application.WeatherForecasts;
+using Sphinx.Domain;
 
 namespace Sphinx.Application
 {
@@ -6,6 +8,7 @@ namespace Sphinx.Application
     {
         public ApplicationMappingProfile()
         {
+            CreateMap<WeatherForecast, WeatherForecastDto>();
         }
     }
 }

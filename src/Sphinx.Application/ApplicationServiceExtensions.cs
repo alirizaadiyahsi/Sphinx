@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using Sphinx.Application.Users;
+using Sphinx.Application.WeatherForecasts;
 
 namespace Sphinx.Application
 {
@@ -8,12 +9,9 @@ namespace Sphinx.Application
     {
         public static IServiceCollection AddSphinxApplication(this IServiceCollection services)
         {
-            services.AddSingleton(new MapperConfiguration(mapperConfig =>
-            {
-                mapperConfig.AddProfile(new ApplicationMappingProfile());
-            }).CreateMapper());
-
+            services.AddAutoMapper();
             services.AddTransient<IUserApplicationService, UserApplicationService>();
+            services.AddTransient<IWeatherForecastApplicationService, WeatherForecastApplicationService>();
 
             return services;
         }

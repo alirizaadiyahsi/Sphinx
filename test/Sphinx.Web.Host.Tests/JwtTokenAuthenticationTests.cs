@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,7 @@ namespace Sphinx.Web.Host.Tests
         public JwtTokenAuthenticationTests()
 
         {
+            ServiceCollectionExtensions.UseStaticRegistration = false;
             var server = new TestServer(
                 new WebHostBuilder()
                     .UseStartup<TestStartup>()
@@ -42,7 +44,7 @@ namespace Sphinx.Web.Host.Tests
         [Fact]
         public async Task GetToken()
         {
-            const string bodyString = @"{username: ""webapitestuser"", password: ""aA!121212""}";
+            const string bodyString = @"{username: ""testuser1"", password: ""aA!121212""}";
             var response = await _client.PostAsync("/api/account/login", new StringContent(bodyString, Encoding.UTF8, "application/json"));
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -55,7 +57,7 @@ namespace Sphinx.Web.Host.Tests
         [Fact]
         public async Task LoginAndGetItem()
         {
-            const string bodyString = @"{username: ""webapitestuser"", password: ""aA!121212""}";
+            const string bodyString = @"{username: ""testuser1"", password: ""aA!121212""}";
             var response = await _client.PostAsync("/api/account/login", new StringContent(bodyString, Encoding.UTF8, "application/json"));
             var responseString = await response.Content.ReadAsStringAsync();
             var responseJson = JObject.Parse(responseString);

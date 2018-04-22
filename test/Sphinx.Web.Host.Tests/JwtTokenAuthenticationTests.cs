@@ -44,7 +44,7 @@ namespace Sphinx.Web.Host.Tests
         [Fact]
         public async Task GetToken()
         {
-            const string bodyString = @"{username: ""testuser1"", password: ""aA!121212""}";
+            const string bodyString = @"{username: ""webapitestuser"", password: ""aA!121212""}";
             var response = await _client.PostAsync("/api/account/login", new StringContent(bodyString, Encoding.UTF8, "application/json"));
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -57,7 +57,7 @@ namespace Sphinx.Web.Host.Tests
         [Fact]
         public async Task LoginAndGetItem()
         {
-            const string bodyString = @"{username: ""testuser1"", password: ""aA!121212""}";
+            const string bodyString = @"{username: ""webapitestuser"", password: ""aA!121212""}";
             var response = await _client.PostAsync("/api/account/login", new StringContent(bodyString, Encoding.UTF8, "application/json"));
             var responseString = await response.Content.ReadAsStringAsync();
             var responseJson = JObject.Parse(responseString);

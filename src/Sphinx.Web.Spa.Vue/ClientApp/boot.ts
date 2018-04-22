@@ -5,9 +5,9 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/', component: require('./components/home/home.vue.html') },
-    { path: '/counter', component: require('./components/counter/counter.vue.html') },
-    { path: '/fetch-data', component: require('./components/fetch-data/fetch-data.vue.html') }
+    { path: '/', component: require('./components/app/home/home.vue.html') },
+    { path: '/counter', component: require('./components/app/counter/counter.vue.html') },
+    { path: '/fetch-data', component: require('./components/app/fetch-data/fetch-data.vue.html') }
 ];
 
 new Vue({
